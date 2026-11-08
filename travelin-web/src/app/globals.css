@@ -1,0 +1,21 @@
+@import "tailwindcss";
+@import "../styles/tokens.css";
+
+/*
+ * Gaya dasar aplikasi.
+ * Semua nilai warna/ukuran berasal dari src/styles/tokens.css.
+ */
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    @apply bg-canvas font-sans text-ink antialiased;
+  }
+
+  /* Angka tarif memakai tabular agar tidak "geser" saat nilainya berubah. */
+  .tabular {
+    font-variant-numeric: tabular-nums;
+  }
+}

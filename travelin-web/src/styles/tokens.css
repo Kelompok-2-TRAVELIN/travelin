@@ -1,0 +1,89 @@
+/*
+ * tokens.css
+ * ------------------------------------------------------------------
+ * Semua nilai desain (warna, font, ukuran teks, radius, jarak) diambil
+ * dari file Figma "Travelin — UI/UX Prototype (Kelompok 2)".
+ *
+ * Catatan: file Figma ini tidak memiliki Figma Variables (hasil
+ * get_variable_defs kosong), jadi token di bawah diekstrak langsung
+ * dari nilai warna/teks/radius pada get_design_context tiap frame.
+ *
+ * Jangan menulis hex atau ukuran px langsung di komponen. Pakai
+ * utility Tailwind yang dihasilkan dari token ini, contoh:
+ *   bg-canvas, text-muted, rounded-card, text-heading, p-card
+ * ------------------------------------------------------------------
+ */
+
+@theme {
+  /* ---------- Tipografi ---------- */
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+
+  --text-label: 12px; /* label form, teks kecil */
+  --text-label--line-height: 15px;
+  --text-note: 13px; /* catatan / helper */
+  --text-note--line-height: 16px;
+  --text-body: 14px; /* teks utama */
+  --text-body--line-height: 17px;
+  --text-body-md: 15px; /* bullet list halaman login */
+  --text-body-md--line-height: 18px;
+  --text-body-lg: 16px; /* paragraf */
+  --text-body-lg--line-height: 19px;
+  --text-subtitle: 18px;
+  --text-subtitle--line-height: 22px;
+  --text-title: 20px;
+  --text-title--line-height: 24px;
+  --text-title-lg: 22px;
+  --text-title-lg--line-height: 27px;
+  --text-heading: 24px; /* judul kartu */
+  --text-heading--line-height: 29px;
+  --text-heading-md: 26px;
+  --text-heading-md--line-height: 31px;
+  --text-heading-lg: 28px; /* judul halaman dashboard */
+  --text-heading-lg--line-height: 34px;
+  --text-display-sm: 30px;
+  --text-display-sm--line-height: 36px;
+  --text-display: 32px;
+  --text-display--line-height: 39px;
+  --text-display-lg: 40px; /* headline halaman login */
+  --text-display-lg--line-height: 48px;
+
+  /* ---------- Warna ---------- */
+  --color-canvas: #f4f6fb; /* latar halaman */
+  --color-surface: #ffffff; /* kartu, input, tombol outline */
+  --color-navy: #0f1226; /* panel kiri login */
+  --color-ink: #0f172a; /* teks utama */
+  --color-muted: #64748b; /* teks sekunder */
+  --color-mist: #cbd5e1; /* teks di atas latar navy */
+  --color-line: #e2e8f0; /* border, divider */
+  --color-line-strong: #dce6f5; /* border placeholder peta */
+
+  --color-primary: #2563eb; /* tombol utama, link aktif */
+  --color-primary-soft: #eaf1ff; /* latar chip/label biru */
+  --color-accent: #38bdf8; /* titik bullet di panel login */
+
+  --color-success: #16a34a; /* chip "Selesai", "Lunas", "ONLINE" */
+  --color-success-soft: #e8f7ee;
+  --color-danger: #dc2626; /* chip "Dibatalkan" */
+  --color-danger-soft: #fdecec;
+  --color-warning: #d97706; /* chip "Paling populer", catatan */
+  --color-warning-soft: #fff4e0;
+  --color-star: #f59e0b; /* bintang rating */
+
+  /* ---------- Radius ---------- */
+  --radius-xs: 8px; /* input, tombol, card kecil */
+  --radius-sm: 10px; /* kartu pilihan kendaraan, catatan harga */
+  --radius-md: 12px; /* kartu rating */
+  --radius-lg: 13px; /* chip, kartu statistik driver */
+  --radius-xl: 14px; /* kartu statistik admin */
+  --radius-2xl: 16px; /* kartu utama, kartu login */
+
+  /* ---------- Jarak / layout ---------- */
+  --spacing-header: 64px; /* tinggi header aplikasi */
+  --spacing-sidebar: 240px; /* lebar sidebar */
+  --spacing-page: 1280px; /* lebar frame desain */
+  --spacing-card: 24px; /* padding dalam kartu */
+  --spacing-panel: 32px; /* padding kartu login */
+  --spacing-field: 44px; /* tinggi input */
+  --spacing-action: 48px; /* tinggi tombol utama */
+  --spacing-action-sm: 44px; /* tinggi tombol sekunder */
+}
