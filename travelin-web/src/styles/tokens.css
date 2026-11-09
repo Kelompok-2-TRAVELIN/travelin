@@ -84,6 +84,8 @@
   --spacing-card: 24px; /* padding dalam kartu */
   --spacing-panel: 32px; /* padding kartu login */
   --spacing-field: 44px; /* tinggi input */
+  --spacing-chip: 26px; /* tinggi chip status */
   --spacing-action: 48px; /* tinggi tombol utama */
   --spacing-action-sm: 44px; /* tinggi tombol sekunder */
+  --spacing-nav: 44px; /* tinggi item menu sidebar */
 }

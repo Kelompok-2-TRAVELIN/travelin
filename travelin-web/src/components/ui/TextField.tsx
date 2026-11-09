@@ -6,6 +6,7 @@ type TextFieldProps = {
   name?: string;
   type?: HTMLInputTypeAttribute;
   placeholder?: string;
+  defaultValue?: string;
   autoComplete?: string;
 };
 
@@ -19,6 +20,7 @@ export function TextField({
   name,
   type = "text",
   placeholder,
+  defaultValue,
   autoComplete,
 }: TextFieldProps) {
   return (
@@ -34,6 +36,7 @@ export function TextField({
         name={name ?? id}
         type={type}
         placeholder={placeholder}
+        defaultValue={defaultValue}
         autoComplete={autoComplete}
         className="h-field w-full rounded-xs border border-line bg-surface px-[13px] text-body text-ink placeholder:text-ink focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-primary"
       />
