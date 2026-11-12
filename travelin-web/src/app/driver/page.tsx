@@ -3,6 +3,7 @@ import { AppShell } from "@/components/layout/AppShell";
 import { Button } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
 import { Chip } from "@/components/ui/Chip";
+import { StatCard } from "@/components/ui/StatCard";
 import {
   driverAvailability,
   driverNav,
@@ -11,19 +12,6 @@ import {
   incomingOrder,
   users,
 } from "@/lib/dummy-data";
-
-/**
- * Kartu statistik kecil (Pesanan masuk / Selesai hari ini).
- * Angka besar berwarna hijau sesuai frame 07.
- */
-function StatCard({ label, value }: { label: string; value: string }) {
-  return (
-    <Card className="px-5 pt-[17px] xl:h-[100px]">
-      <p className="text-note font-semibold text-ink">{label}</p>
-      <p className="mt-[10px] text-display font-bold text-success">{value}</p>
-    </Card>
-  );
-}
 
 /**
  * Frame 07 — Dashboard Driver

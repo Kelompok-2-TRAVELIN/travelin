@@ -195,3 +195,44 @@ export const driverTripActions = [
   "Jemput Penumpang",
   "Selesaikan Trip",
 ];
+
+// Ringkasan angka dashboard admin (frame 08). Warna angka berbeda per kartu.
+export const adminStats: Array<{
+  label: string;
+  value: string;
+  tone: "primary" | "success" | "warning";
+}> = [
+  { label: "Pesanan aktif", value: "12", tone: "primary" },
+  { label: "Driver online", value: "08", tone: "success" },
+  { label: "Menunggu assignment", value: "03", tone: "warning" },
+];
+
+// Tabel pesanan yang menunggu assignment (frame 08).
+export const pendingOrders = [
+  {
+    id: "#001",
+    route: "Jl. Ahmad Yani → Jl. Tanjungpura",
+    vehicle: "Mobil Economy",
+    fare: "Rp 42.000",
+  },
+  {
+    id: "#002",
+    route: "Bandara Supadio → Jl. Gajah Mada",
+    vehicle: "Mobil MPV",
+    fare: "Rp 185.000",
+  },
+  {
+    id: "#003",
+    route: "Jl. Sungai Raya → Jl. Imam Bonjol",
+    vehicle: "Travel",
+    fare: "Rp 320.000",
+  },
+];
+
+// Parameter tarif yang hanya bisa diubah admin (frame 08).
+export const fareParameters = [
+  { label: "Tarif dasar", value: "Rp 30.000" },
+  { label: "Tarif per km", value: "Rp 1.667" },
+  { label: "Biaya layanan", value: "Rp 2.000" },
+  { label: "Pajak", value: "Rp 2.000" },
+];

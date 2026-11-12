@@ -87,5 +87,6 @@
   --spacing-chip: 26px; /* tinggi chip status */
   --spacing-action: 48px; /* tinggi tombol utama */
   --spacing-action-sm: 44px; /* tinggi tombol sekunder */
+  --spacing-action-xs: 40px; /* tombol kecil di tabel (frame 08) */
   --spacing-nav: 44px; /* tinggi item menu sidebar */
 }

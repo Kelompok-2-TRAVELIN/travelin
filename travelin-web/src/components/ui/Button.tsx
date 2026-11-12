@@ -2,7 +2,7 @@ import Link from "next/link";
 import type { ReactNode } from "react";
 
 type ButtonVariant = "primary" | "outline" | "danger" | "dangerGhost";
-type ButtonSize = "md" | "sm";
+type ButtonSize = "md" | "sm" | "xs";
 
 type ButtonProps = {
   children: ReactNode;
@@ -21,6 +21,7 @@ const base =
 const sizes: Record<ButtonSize, string> = {
   md: "h-action px-6", // 48px — tombol aksi utama
   sm: "h-action-sm px-4", // 44px — tombol sekunder/demo
+  xs: "h-action-xs px-4", // 40px — tombol di dalam tabel (frame 08)
 };
 
 const variants: Record<ButtonVariant, string> = {
