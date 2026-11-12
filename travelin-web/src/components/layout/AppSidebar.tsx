@@ -13,6 +13,8 @@ type AppSidebarProps = {
   activeHref?: string;
   /** Konten di bagian bawah sidebar (contoh: tombol Keluar untuk driver/admin). */
   footer?: ReactNode;
+  /** Jarak bawah footer; tiap frame bisa berbeda (frame 07/08: 116px). */
+  footerClassName?: string;
 };
 
 /**
@@ -20,7 +22,12 @@ type AppSidebarProps = {
  * Di layar kecil menu berubah menjadi baris tab yang bisa digeser ke samping
  * (adaptasi mobile, karena desain Figma hanya menyediakan versi desktop).
  */
-export function AppSidebar({ items, activeHref, footer }: AppSidebarProps) {
+export function AppSidebar({
+  items,
+  activeHref,
+  footer,
+  footerClassName = "pb-5",
+}: AppSidebarProps) {
   return (
     <aside className="flex shrink-0 flex-col border-line bg-surface max-lg:border-b lg:w-sidebar lg:border-r">
       <ul className="flex flex-wrap gap-2 px-4 py-3 lg:flex-col lg:flex-nowrap lg:py-5">
@@ -52,7 +59,9 @@ export function AppSidebar({ items, activeHref, footer }: AppSidebarProps) {
       </ul>
 
       {footer ? (
-        <div className="mt-auto hidden px-4 pb-5 lg:block">{footer}</div>
+        <div className={`mt-auto hidden px-4 lg:block ${footerClassName}`}>
+          {footer}
+        </div>
       ) : null}
     </aside>
   );

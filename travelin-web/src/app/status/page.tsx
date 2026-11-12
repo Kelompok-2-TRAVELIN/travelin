@@ -145,7 +145,7 @@ export default function StatusTripPage() {
           </p>
 
           <div className="mt-[13px]">
-            <Chip tone="neutral">{tripDetail.paymentStatus}</Chip>
+            <Chip tone="success">{tripDetail.paymentStatus}</Chip>
           </div>
 
           <Button

@@ -8,6 +8,8 @@ type AppShellProps = {
   navItems: NavItem[];
   activeHref?: string;
   sidebarFooter?: ReactNode;
+  /** Jarak bawah footer sidebar (frame 07/08: 116px). */
+  sidebarFooterClassName?: string;
   /** Penyesuaian padding <main> (mis. jarak judul tiap frame berbeda 4px). */
   contentClassName?: string;
 };
@@ -22,6 +24,7 @@ export function AppShell({
   navItems,
   activeHref,
   sidebarFooter,
+  sidebarFooterClassName,
   contentClassName = "lg:pt-6",
 }: AppShellProps) {
   return (
@@ -29,7 +32,12 @@ export function AppShell({
       <AppHeader user={user} />
 
       <div className="flex flex-1 flex-col lg:flex-row">
-        <AppSidebar items={navItems} activeHref={activeHref} footer={sidebarFooter} />
+        <AppSidebar
+          items={navItems}
+          activeHref={activeHref}
+          footer={sidebarFooter}
+          footerClassName={sidebarFooterClassName}
+        />
 
         <main
           className={`flex-1 px-4 pb-8 pt-6 sm:px-6 lg:pl-6 lg:pr-8 ${contentClassName}`}

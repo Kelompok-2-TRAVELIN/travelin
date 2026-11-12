@@ -165,3 +165,33 @@ export const tripRating = {
   commentLabel: "Komentar (opsional)",
   commentPlaceholder: "Driver ramah dan tepat waktu",
 };
+
+// Data dashboard driver (frame 07).
+export const driverAvailability = {
+  title: "Status ketersediaan",
+  status: "ONLINE",
+  note: "Hanya driver online yang menerima pesanan.",
+};
+
+export const driverStats = [
+  { label: "Pesanan masuk", value: "03" },
+  { label: "Selesai hari ini", value: "05" },
+];
+
+export const incomingOrder = {
+  id: "Order #001",
+  rows: [
+    { label: "Jemput", value: "Jl. Ahmad Yani No. 12, Pontianak" },
+    { label: "Tujuan", value: "Jl. Tanjungpura No. 45, Pontianak" },
+    { label: "Jadwal", value: "14 Okt 2026, 14:30, 2 penumpang" },
+  ],
+  fareLabel: "Tarif",
+  fare: "Rp 42.000",
+};
+
+// Tombol update status pada frame 07 (dua pertama outline, terakhir utama).
+export const driverTripActions = [
+  "Menuju Lokasi",
+  "Jemput Penumpang",
+  "Selesaikan Trip",
+];
