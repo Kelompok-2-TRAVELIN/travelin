@@ -1,6 +1,12 @@
 import type { ReactNode } from "react";
 
-type ChipTone = "neutral" | "success" | "danger" | "warning" | "primary";
+type ChipTone =
+  | "neutral"
+  | "success"
+  | "danger"
+  | "warning"
+  | "primary"
+  | "primarySolid";
 
 type ChipProps = {
   children: ReactNode;
@@ -15,6 +21,7 @@ const tones: Record<ChipTone, string> = {
   danger: "bg-danger-soft text-danger",
   warning: "bg-warning-soft text-warning",
   primary: "bg-primary-soft text-primary",
+  primarySolid: "bg-primary text-white",
 };
 
 /**

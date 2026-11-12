@@ -66,3 +66,102 @@ export const tripHistory: TripHistoryItem[] = [
     fare: "Rp 0",
   },
 ];
+
+// Ringkasan pesanan pada frame 04 (kartu kiri).
+export const tripSummary = [
+  { label: "Lokasi jemput", value: "Jl. Ahmad Yani No. 12, Pontianak" },
+  { label: "Tujuan", value: "Jl. Tanjungpura No. 45, Pontianak" },
+  { label: "Jenis kendaraan", value: "Mobil Economy" },
+  { label: "Jumlah penumpang", value: "2 penumpang, 2 bagasi" },
+  { label: "Jadwal jemput", value: "14 Okt 2026, 14:30" },
+  {
+    label: "Catatan",
+    value: "Tunggu di depan minimarket, bawa 1 koper",
+  },
+  { label: "Driver", value: "Menunggu assignment dari admin" },
+];
+
+// Rincian tarif pada frame 04 (kartu kanan).
+export const fareBreakdown = [
+  { label: "Tarif dasar", value: "Rp 30.000" },
+  { label: "Jarak (4,8 km)", value: "Rp 8.000" },
+  { label: "Biaya layanan", value: "Rp 2.000" },
+  { label: "Pajak", value: "Rp 2.000" },
+];
+
+// Pilihan metode pembayaran pada frame 05.
+export type PaymentMethodItem = {
+  name: string;
+  description: string;
+  popular?: boolean;
+};
+
+export const paymentMethods: PaymentMethodItem[] = [
+  {
+    name: "QRIS (semua e-wallet)",
+    description: "Bayar dengan aplikasi e-wallet",
+    popular: true,
+  },
+  {
+    name: "E-Wallet",
+    description: "DANA, OVO, GoPay, ShopeePay",
+  },
+  {
+    name: "Transfer Bank",
+    description: "BCA, BRI, BNI, Mandiri",
+  },
+  {
+    name: "Kartu Debit / Kredit",
+    description: "Visa, Mastercard, JCB",
+  },
+  {
+    name: "Tunai ke driver",
+    description: "Dibayar langsung setelah perjalanan selesai",
+  },
+];
+
+// Ringkasan singkat pada frame 05 (kartu kanan).
+export const paymentSummary = {
+  route: ["Jl. Ahmad Yani No. 12", "ke Jl. Tanjungpura No. 45"],
+  vehicle: "Mobil Economy, 2 penumpang",
+  total: "Rp 42.000",
+};
+
+// Tahapan perjalanan pada frame 06.
+export const tripSteps = [
+  "Menunggu Driver",
+  "Driver Ditugaskan",
+  "Menuju Lokasi",
+  "Dalam Perjalanan",
+  "Selesai",
+];
+
+// Langkah aktif (0-based): frame 06 menampilkan langkah ke-3 "Menuju Lokasi".
+export const tripActiveStep = 2;
+
+// Data driver contoh pada kartu status (frame 06).
+export const tripDriver = {
+  name: "Budi Santoso (contoh data)",
+  vehicle: "Mobil Economy, KB 1234 AB",
+  rating: "Rating 4,8",
+  eta: "Tiba sekitar 5 menit",
+};
+
+// Detail perjalanan pada frame 06.
+export const tripDetail = {
+  pickupLabel: "Jemput",
+  pickup: "Jl. Ahmad Yani No. 12",
+  destinationLabel: "Tujuan",
+  destination: "Jl. Tanjungpura No. 45",
+  fareLabel: "Total tarif",
+  fare: "Rp 42.000",
+  paymentStatus: "Lunas",
+};
+
+// Kartu rating pada frame 06: 4 dari 5 bintang terisi.
+export const tripRating = {
+  title: "Beri rating (aktif setelah perjalanan selesai)",
+  filledStars: 4,
+  commentLabel: "Komentar (opsional)",
+  commentPlaceholder: "Driver ramah dan tepat waktu",
+};

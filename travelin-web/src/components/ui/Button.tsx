@@ -1,7 +1,7 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
 
-type ButtonVariant = "primary" | "outline" | "danger";
+type ButtonVariant = "primary" | "outline" | "danger" | "dangerGhost";
 type ButtonSize = "md" | "sm";
 
 type ButtonProps = {
@@ -26,7 +26,9 @@ const sizes: Record<ButtonSize, string> = {
 const variants: Record<ButtonVariant, string> = {
   primary: "bg-primary text-white",
   outline: "border border-line bg-surface text-ink",
-  danger: "border border-line bg-surface text-danger",
+  danger: "border border-danger bg-surface text-danger",
+  // Tombol teks merah tanpa border (frame 06 "Batalkan Pesanan").
+  dangerGhost: "text-danger",
 };
 
 /**
