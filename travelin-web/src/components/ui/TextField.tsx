@@ -1,4 +1,4 @@
-import type { HTMLInputTypeAttribute } from "react";
+import type { ChangeEvent, HTMLInputTypeAttribute } from "react";
 
 type TextFieldProps = {
   id: string;
@@ -8,6 +8,11 @@ type TextFieldProps = {
   type?: HTMLInputTypeAttribute;
   placeholder?: string;
   defaultValue?: string;
+  /** Isi `value` + `onChange` untuk input terkendali (controlled). */
+  value?: string;
+  onChange?: (event: ChangeEvent<HTMLInputElement>) => void;
+  maxLength?: number;
+  disabled?: boolean;
   autoComplete?: string;
   /** Kelas tambahan untuk pembungkus (mis. flex-1 di baris promo). */
   className?: string;
@@ -24,6 +29,10 @@ export function TextField({
   type = "text",
   placeholder,
   defaultValue,
+  value,
+  onChange,
+  maxLength,
+  disabled = false,
   autoComplete,
   className = "",
 }: TextFieldProps) {
@@ -42,10 +51,12 @@ export function TextField({
         name={name ?? id}
         type={type}
         placeholder={placeholder}
-        defaultValue={defaultValue}
+        {...(value === undefined ? { defaultValue } : { value, onChange })}
+        maxLength={maxLength}
+        disabled={disabled}
         autoComplete={autoComplete}
         aria-label={label ?? placeholder}
-        className="h-field w-full rounded-xs border border-line bg-surface px-[13px] text-body text-ink placeholder:text-ink focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-primary"
+        className="h-field w-full rounded-xs border border-line bg-surface px-[13px] text-body text-ink placeholder:text-ink focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-primary disabled:bg-canvas disabled:text-muted"
       />
     </div>
   );

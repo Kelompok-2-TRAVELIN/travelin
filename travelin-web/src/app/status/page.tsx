@@ -1,9 +1,9 @@
 import Image from "next/image";
 import { AppShell } from "@/components/layout/AppShell";
+import { RatingForm } from "@/components/rating/RatingForm";
 import { Button } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
 import { Chip } from "@/components/ui/Chip";
-import { TextField } from "@/components/ui/TextField";
 import {
   customerNav,
   tripActiveStep,
@@ -160,41 +160,15 @@ export default function StatusTripPage() {
       </div>
 
       {/* Kartu rating selebar dua kolom di atas. */}
-      <Card className="mt-5 px-[23px] pt-[19px] pb-6 xl:h-[230px] xl:pb-0">
-        <h2 className="text-body-lg font-semibold text-ink">
-          {tripRating.title}
-        </h2>
-
-        {/* Bintang rating: 4 terisi, 1 kosong (sesuai desain). */}
-        <div
-          className="mt-[18px] flex gap-2 text-display-sm"
-          aria-label={`Rating ${tripRating.filledStars} dari 5`}
-        >
-          {Array.from({ length: 5 }, (_, index) => (
-            <span
-              key={index}
-              aria-hidden="true"
-              className={`w-8 text-center ${
-                index < tripRating.filledStars ? "text-star" : "text-line"
-              }`}
-            >
-              ★
-            </span>
-          ))}
-        </div>
-
-        <div className="mt-4 flex flex-col gap-3 xl:flex-row xl:items-start xl:gap-9">
-          <TextField
-            id="komentar"
-            name="komentar"
-            label={tripRating.commentLabel}
-            placeholder={tripRating.commentPlaceholder}
-            className="xl:w-[680px]"
-          />
-          <Button type="button" size="sm" className="w-full xl:mt-5 xl:w-[220px]">
-            Kirim Rating
-          </Button>
-        </div>
+      <Card className="mt-5 px-[23px] pt-[19px] pb-6 xl:min-h-[230px]">
+        <RatingForm
+          title={tripRating.title}
+          commentLabel={tripRating.commentLabel}
+          commentPlaceholder={tripRating.commentPlaceholder}
+          defaultStars={tripRating.filledStars}
+          driver={tripDriver.shortName}
+          route={`${tripDetail.pickup} → ${tripDetail.destination}`}
+        />
       </Card>
     </AppShell>
   );

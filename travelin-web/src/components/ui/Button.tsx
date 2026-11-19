@@ -6,11 +6,12 @@ type ButtonSize = "md" | "sm" | "xs";
 
 type ButtonProps = {
   children: ReactNode;
-  /** Jika diisi, tombol dirender sebagai tautan (Link). */
+  /** Jika diisi, tombol dirender sebagai tautan (Link). URL http(s) dibuka di tab baru. */
   href?: string;
   variant?: ButtonVariant;
   size?: ButtonSize;
   type?: "button" | "submit";
+  disabled?: boolean;
   className?: string;
 };
 
@@ -43,11 +44,32 @@ export function Button({
   variant = "primary",
   size = "md",
   type = "button",
+  disabled = false,
   className = "",
 }: ButtonProps) {
-  const classes = [base, sizes[size], variants[variant], className].join(" ");
+  const classes = [
+    base,
+    sizes[size],
+    variants[variant],
+    disabled ? "cursor-not-allowed opacity-60" : "",
+    className,
+  ].join(" ");
 
   if (href) {
+    // Tautan eksternal (WhatsApp, email, telepon) tidak memakai router Next.
+    if (/^https?:\/\//.test(href)) {
+      return (
+        <a
+          href={href}
+          target="_blank"
+          rel="noopener noreferrer"
+          className={classes}
+        >
+          {children}
+        </a>
+      );
+    }
+
     return (
       <Link href={href} className={classes}>
         {children}
@@ -56,7 +78,7 @@ export function Button({
   }
 
   return (
-    <button type={type} className={classes}>
+    <button type={type} className={classes} disabled={disabled}>
       {children}
     </button>
   );

@@ -16,8 +16,8 @@ export const users: Record<"customer" | "driver" | "admin", AppUser> = {
 export const customerNav: NavItem[] = [
   { label: "Beranda", href: "/dashboard" },
   { label: "Pesan Perjalanan", href: "/pesan" },
-  { label: "Riwayat & Rating" }, // frame belum tersedia
-  { label: "Bantuan" }, // frame belum tersedia
+  { label: "Riwayat & Rating", href: "/riwayat-rating" },
+  { label: "Bantuan", href: "/bantuan" },
 ];
 
 // Menu driver (frame 07).
@@ -142,6 +142,7 @@ export const tripActiveStep = 2;
 // Data driver contoh pada kartu status (frame 06).
 export const tripDriver = {
   name: "Budi Santoso (contoh data)",
+  shortName: "Budi Santoso",
   vehicle: "Mobil Economy, KB 1234 AB",
   rating: "Rating 4,8",
   eta: "Tiba sekitar 5 menit",
@@ -236,3 +237,100 @@ export const fareParameters = [
   { label: "Biaya layanan", value: "Rp 2.000" },
   { label: "Pajak", value: "Rp 2.000" },
 ];
+
+/*
+ * Halaman Riwayat & Rating (frame belum tersedia, adaptasi dari frame 02).
+ * Rating baru yang dikirim lewat frame 06 disimpan di localStorage dan
+ * digabung dengan contoh di bawah ini.
+ */
+export type RatingEntry = {
+  id: string;
+  /** Tanggal ulasan, format "12 Okt 2026". */
+  date: string;
+  driver: string;
+  route: string;
+  /** 1–5 bintang. */
+  stars: number;
+  comment: string;
+};
+
+export const ratingHistory: RatingEntry[] = [
+  {
+    id: "seed-1",
+    date: "12 Okt 2026",
+    driver: "Budi Santoso",
+    route: "Jl. Ahmad Yani → Bandara Supadio",
+    stars: 5,
+    comment: "Driver ramah dan tepat waktu.",
+  },
+  {
+    id: "seed-2",
+    date: "08 Okt 2026",
+    driver: "Siti Aminah",
+    route: "Jl. Tanjungpura → Jl. Gajah Mada",
+    stars: 4,
+    comment: "Mobil bersih, sampai lebih cepat dari perkiraan.",
+  },
+  {
+    id: "seed-3",
+    date: "03 Okt 2026",
+    driver: "Agus Salim",
+    route: "Jl. Sungai Raya → Jl. Imam Bonjol",
+    stars: 5,
+    comment: "",
+  },
+];
+
+/*
+ * Halaman Bantuan (frame belum tersedia).
+ * Pertanyaan umum memakai <details> agar bisa dibuka-tutup tanpa JavaScript.
+ */
+export const helpFaqs = [
+  {
+    question: "Bagaimana cara memesan perjalanan?",
+    answer:
+      "Buka Beranda, isi lokasi jemput dan tujuan, lalu tekan Cari Tarif. Setelah tarif muncul, pilih kendaraan dan lanjutkan ke pembayaran.",
+  },
+  {
+    question: "Metode pembayaran apa saja yang tersedia?",
+    answer:
+      "QRIS, e-wallet (DANA, OVO, GoPay, ShopeePay), transfer bank, kartu debit/kredit, dan tunai ke driver.",
+  },
+  {
+    question: "Bagaimana cara membatalkan pesanan?",
+    answer:
+      "Buka halaman Status Perjalanan, lalu tekan Batalkan Pesanan. Pembatalan gratis selama driver belum tiba di lokasi jemput.",
+  },
+  {
+    question: "Kapan saya bisa memberi rating driver?",
+    answer:
+      "Rating dapat dikirim setelah perjalanan selesai. Pilih jumlah bintang, tambahkan komentar bila perlu, lalu tekan Kirim Rating. Ulasan Anda tampil di halaman Riwayat & Rating.",
+  },
+  {
+    question: "Barang saya tertinggal di kendaraan, apa yang harus dilakukan?",
+    answer:
+      "Hubungi tim bantuan melalui WhatsApp atau telepon di samping. Sertakan tanggal perjalanan dan nama driver agar kami bisa mencarikan kendaraannya.",
+  },
+];
+
+export const helpContacts = [
+  {
+    label: "WhatsApp",
+    value: "0812-5678-9012",
+    href: "https://wa.me/6281256789012",
+    note: "Balasan tercepat, setiap hari 07.00–22.00 WIB.",
+  },
+  {
+    label: "Email",
+    value: "bantuan@travelin.id",
+    href: "mailto:bantuan@travelin.id",
+    note: "Dijawab maksimal 1x24 jam.",
+  },
+  {
+    label: "Telepon",
+    value: "(0561) 123-456",
+    href: "tel:+62561123456",
+    note: "Nomor contoh untuk prototipe.",
+  },
+];
+
