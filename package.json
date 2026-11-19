@@ -1,0 +1,13 @@
+{
+  "name": "projek-kelompok",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Root helper scripts for the Travelin app in travelin-web/",
+  "scripts": {
+    "dev": "npm --prefix travelin-web run dev",
+    "build": "npm --prefix travelin-web run build",
+    "start": "npm --prefix travelin-web run start",
+    "lint": "npm --prefix travelin-web run lint",
+    "install:web": "npm --prefix travelin-web install"
+  }
+}
